@@ -1,5 +1,5 @@
 <?php
-//require 'db.php';
+require 'db.php';
 session_start();
 
 /* ログインチェック */
@@ -238,4 +238,5 @@ if ('serviceWorker' in navigator) {
 
 </body>
 </html>
+
 
