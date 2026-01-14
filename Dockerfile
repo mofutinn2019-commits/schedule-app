@@ -1,13 +1,11 @@
 FROM php:8.2-apache
 
-# Apacheの設定
-RUN a2enmod rewrite
+# Apacheでindex.phpを有効にする
+RUN docker-php-ext-install pdo pdo_mysql
 
-# ファイルを公開ディレクトリにコピー
-COPY . /var/www/html/
+# index.php を Apache の公開フォルダへコピー
+COPY index.php /var/www/html/
 
-# 権限調整
-RUN chown -R www-data:www-data /var/www/html
-
+# Apache用ポート
 EXPOSE 80
 
